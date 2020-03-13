@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Client Routes
+Route::get('clients', 'ClientsController@index');
+Route::get('clients/create', 'ClientsController@create');
+Route::post('clients', 'ClientsController@store');
+Route::get('clients/{clients}', 'ClientsController@show');
