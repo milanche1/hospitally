@@ -22,4 +22,4 @@ Route::get('/', function () {
 Route::get('clients', 'ClientsController@index');
 Route::get('clients/create', 'ClientsController@create');
 Route::post('clients', 'ClientsController@store');
-Route::get('clients/{clients}', 'ClientsController@show');
+Route::get('clients/{client}', 'ClientsController@show');
