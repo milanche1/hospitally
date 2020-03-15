@@ -33,6 +33,18 @@ class ClientsController extends Controller
         return view('clients/show', compact('client'));
     }
 
+    public function edit(Client $client)
+    {
+        $doctors = Doctor::all();
+        return view('clients/edit', compact('client', 'doctors'));
+    }
+
+    public function update(Client $client)
+    {
+        $client->update($this->validateRequest());
+        return redirect('/clients/' . $client->id);
+    }
+
     private function validateRequest()
     {
         return request()->validate([

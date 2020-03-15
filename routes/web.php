@@ -17,9 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Page routes
+Route::view('/about-us', 'about');
 
 // Client Routes
-Route::get('clients', 'ClientsController@index');
-Route::get('clients/create', 'ClientsController@create');
-Route::post('clients', 'ClientsController@store');
-Route::get('clients/{client}', 'ClientsController@show');
+Route::get('/clients', 'ClientsController@index');
+Route::get('/clients/create', 'ClientsController@create');
+Route::post('/clients', 'ClientsController@store');
+Route::get('/clients/{client}', 'ClientsController@show');
+Route::get('/clients/{client}/edit', 'ClientsController@edit');
+Route::patch('/clients/{client}', 'ClientsController@update');
