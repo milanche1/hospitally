@@ -9,4 +9,9 @@
     </ul>
     <a href="/clients" class="btn btn-primary">Back to Client's Page</a>
     <a href="/clients/{{$client->id}}/edit" class="btn btn-dark">Edit Client</a>
+    <form method="post" action="/clients/{{$client->id}}">
+        @method('DELETE')
+        @csrf
+        <button class="btn btn-danger" type="submit">Delete Client</button>
+    </form>
 @endsection

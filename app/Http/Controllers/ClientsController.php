@@ -45,6 +45,12 @@ class ClientsController extends Controller
         return redirect('/clients/' . $client->id);
     }
 
+    public function destroy(Client $client)
+    {
+        $client->delete();
+        return redirect('/clients');
+    }
+
     private function validateRequest()
     {
         return request()->validate([
